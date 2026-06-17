@@ -2,6 +2,15 @@ package main
 
 import "fmt"
 
+// closure
+	func makeCounter() func() int {
+    i := 0
+    return func() int {
+        i++
+        return i
+    }
+	}
+
 func main() {
 	//defer
 	defer fmt.Println("Esto se ejecutará al final de la función main.")
@@ -72,4 +81,12 @@ func main() {
 	default:
 		fmt.Println("No es ni lunes ni martes.")
 	}
+
+	// closure
+	counter := makeCounter()
+
+	fmt.Println(counter()) // Imprime: 1
+	fmt.Println(counter())
+	fmt.Println(counter()) // Imprime: 3
+	
 }
