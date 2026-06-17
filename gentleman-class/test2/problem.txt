@@ -1,0 +1,3 @@
+Tengo un texto y debo retornar el numero de vocales de este
+
+Para ello debo recorrer el string caracter a caracter, compararlo con las vocales y cada que haga match aumentar el contador
