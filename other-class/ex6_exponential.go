@@ -1,20 +1,30 @@
 package otherclass
 
-// Ejercicio 6 — O(2^n) Exponencial
-// Generar todos los subconjuntos (power set) de un slice de enteros.
-// Complejidad objetivo: O(2^n) tiempo y O(2^n) espacio para almacenar resultados.
+// Exercise 6: Exponential Time O(2^N) vs. Linear Time O(N)
+//
+// The Fibonacci sequence is a classic example of how recursion can lead to exponential complexity.
+//
+// Goal: Implement the naive recursive Fibonacci (O(2^N)) and the iterative Fibonacci (O(N)).
+//
+// Warning: Running the benchmark for recursive Fibonacci with N >= 40 can lock up your terminal.
+// That is why the benchmarks will use small values of N to keep it safe!
 
-func PowerSet(nums []int) [][]int {
-	res := [][]int{{}}
-	for _, v := range nums {
-		n := len(res)
-		for i := 0; i < n; i++ {
-			// crear nueva subset añadiendo v
-			cur := make([]int, len(res[i])+1)
-			copy(cur, res[i])
-			cur[len(cur)-1] = v
-			res = append(res, cur)
-		}
-	}
-	return res
+// FibonacciRecursive calculates the N-th Fibonacci number using naive recursion.
+// Formula: F(n) = F(n-1) + F(n-2) with F(0) = 0, F(1) = 1.
+// Time Complexity: O(2^N)
+// Space Complexity: O(N) (due to call stack depth)
+func FibonacciRecursive(n int) int {
+	// TODO: Implement the naive recursive solution.
+	// Base cases: if n <= 1, return n.
+	// Recursive case: return FibonacciRecursive(n-1) + FibonacciRecursive(n-2).
+	return 0
+}
+
+// FibonacciIterative calculates the N-th Fibonacci number using a simple loop.
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+func FibonacciIterative(n int) int {
+	// TODO: Implement the iterative solution using a loop.
+	// Keep track of the last two values and update them.
+	return 0
 }
