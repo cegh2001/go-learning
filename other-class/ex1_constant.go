@@ -23,5 +23,8 @@ func LookupInSlice(nums []int, target int) bool {
 // Average-case complexity: O(1) - Constant Time
 func LookupInMap(lookupMap map[int]bool, target int) bool {
 	// TODO: Retrieve the boolean value directly from the map in O(1) time.
+	if _, exists := lookupMap[target]; exists {
+		return true
+	}
 	return false
 }
