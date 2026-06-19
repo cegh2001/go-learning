@@ -11,6 +11,11 @@ package otherclass
 // Worst-case complexity: O(N) - Linear Time
 func LookupInSlice(nums []int, target int) bool {
 	// TODO: Iterate through the slice and return true if target is found, false otherwise.
+	for _, num := range nums {
+		if num == target {
+			return true
+		}
+	}
 	return false
 }
 
