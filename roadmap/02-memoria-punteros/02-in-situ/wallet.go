@@ -19,7 +19,7 @@ func NewWallet(owner string, initialBalance float64) Wallet {
 
 // Deposit suma saldo a la billetera.
 // BUG: El saldo nunca cambia para quien llama a esta función.
-func (w Wallet) Deposit(amount float64) error {
+func (w *Wallet) Deposit(amount float64) error {
 	if amount <= 0 {
 		return errors.New("el monto debe ser mayor a cero")
 	}
@@ -31,7 +31,7 @@ func (w Wallet) Deposit(amount float64) error {
 
 // Withdraw descuenta saldo de la billetera.
 // BUG: El saldo tampoco cambia acá.
-func (w Wallet) Withdraw(amount float64) error {
+func (w *Wallet) Withdraw(amount float64) error {
 	if amount <= 0 {
 		return errors.New("el monto debe ser mayor a cero")
 	}
